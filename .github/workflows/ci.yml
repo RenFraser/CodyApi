@@ -7,14 +7,26 @@ on:
     branches: [main]
 jobs:
   build:
+    permissions:
+      packages: read
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+          registry-url: "https://npm.pkg.github.com"
+
+        # Skip post-install scripts here, as a malicious script could steal NODE_AUTH_TOKEN.
       - run: npm ci
+        shell: bash
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
+
       - run: npm audit
       - run: npm run build
       - run: npm run lint
