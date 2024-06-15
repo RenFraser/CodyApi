@@ -22,7 +22,7 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
 
         # Skip post-install scripts here, as a malicious script could steal NODE_AUTH_TOKEN.
-      - run: npm ci
+      - run: npm ci --ignore-scripts
         shell: bash
         env:
           NODE_AUTH_TOKEN: ${{ github.token }}
