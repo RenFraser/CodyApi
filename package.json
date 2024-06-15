@@ -5,6 +5,9 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "tsc",
+    "clean": "run-p clean:dist clean:node_modules",
+    "clean:dist": "rimraf dist",
+    "clean:node_modules": "rimraf node_modules",
     "start": "node dist/index.js",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx,json}'",
     "lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx,json}' --fix",
@@ -23,7 +26,9 @@
     "depcheck": "^1.4.7",
     "eslint": "^8.56.0",
     "globals": "^15.4.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "3.3.2",
+    "rimraf": "^5.0.7",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.13.0"
   }
