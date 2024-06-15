@@ -13,13 +13,13 @@
     "format:fix": "prettier --write ."
   },
   "dependencies": {
-    "depcheck": "^1.4.7",
     "dotenv": "^16.4.5",
     "express": "^4.19.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.5.0",
     "@types/express": "^4.17.21",
+    "depcheck": "^1.4.7",
     "eslint": "^8.56.0",
     "globals": "^15.4.0",
     "prettier": "3.3.2",
