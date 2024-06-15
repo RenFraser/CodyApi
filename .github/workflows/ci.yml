@@ -16,6 +16,7 @@ jobs:
           node-version: 22
       - run: npm ci
       - run: npm audit
+      - run: npm run build
 
   dependabot:
     permissions: write-all
