@@ -2,7 +2,7 @@
 
 ## Install
 
-Add the following to your `~/.npmrc` file. 
+Add the following to your `~/.npmrc` file.
 Replace `TOKEN` with your PAT.
 
 ```text
