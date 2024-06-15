@@ -8,12 +8,14 @@
     "start": "node dist/index.js",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx,json}'",
     "lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx,json}' --fix",
+    "lint:dependencies": "depcheck",
     "format": "prettier --check .",
     "format:fix": "prettier --write ."
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~4.3.5",
+    "depcheck": "^1.4.7",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "http-errors": "~2.0.0",
