@@ -1,5 +1,8 @@
 import express, { Express } from "express";
 import bedrock from "./routes/Bedrock";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app: Express = express();
 const port = process.env["PORT"] || 3000;
