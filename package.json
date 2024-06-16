@@ -16,6 +16,7 @@
     "format:fix": "prettier --write ."
   },
   "dependencies": {
+    "@aws-sdk/protocol-http": "^3.374.0",
     "@aws-smithy/server-node": "^1.0.0-alpha.10",
     "@renfraser/cody-server": "^0.0.10",
     "dotenv": "^16.4.5",
