@@ -12,7 +12,10 @@ router.post("/text", async (req: Request, res: Response) => {
   const handler = getSendTextHandler(SendTextOperation);
   const response = await handler.handle(request, { user: undefined });
 
-  res.send(response);
+
+  res.status(response.statusCode)
+  Object.entries(response.headers).forEach(([key, value]) => res.setHeader(key, value));
+  res.send(response.body);
 });
 
 export default router;
