@@ -125,6 +125,10 @@ jobs:
       - run: npm run test
         working-directory: CodyApiTests
 
+      # trying to be a good GitHub citizen - env gets torn down anyway
+      - run: pkill -f "npm run start" # Terminate the background server process
+        if: always() # Run this step even if the tests fail
+
   dependabot:
     permissions: write-all
     runs-on: ubuntu-latest
