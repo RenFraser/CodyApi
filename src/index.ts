@@ -1,6 +1,7 @@
 import express, { Express } from "express";
 import bedrock from "./routes/Bedrock";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
@@ -11,6 +12,12 @@ app.use((req, _, next) => {
   console.log(`${req.method} ${req.path}`);
   next();
 });
+
+app.use(
+  cors({
+    origin: "http://localhost:8080",
+  }),
+);
 
 app.use("/api/bedrock", bedrock);
 

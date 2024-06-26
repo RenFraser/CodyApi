@@ -1,5 +1,10 @@
 import { Operation } from "@aws-smithy/server-common";
-import { SendMessageInput, SendMessageOutput } from "@renfraser/cody-server";
+import {
+  Message,
+  Participant,
+  SendMessageInput,
+  SendMessageOutput,
+} from "@renfraser/cody-server";
 import { HandlerContext } from "../context/HandlerContext";
 
 export const SendMessageOperation: Operation<
@@ -7,15 +12,15 @@ export const SendMessageOperation: Operation<
   SendMessageOutput,
   HandlerContext
 > = async (
-  _input: SendMessageInput,
+  input: SendMessageInput,
   _context: HandlerContext,
 ): Promise<SendMessageOutput> => {
+  const history: Message[] = input.messages || [];
+  const newMsg: Message = {
+    participant: Participant.ASSISTANT,
+    text: "Test",
+  };
   return {
-    messages: [
-      { text: "Hi!" },
-      {
-        text: "Test",
-      },
-    ],
+    messages: [...history, newMsg],
   };
 };
